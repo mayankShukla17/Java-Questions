@@ -1,0 +1,221 @@
+Java Questions:-
+
+Q.1 The difference between Sub-class and Inner Class.
+Ans: There are big differences between inner classes and subclasses:
+
+-> Inner classes are in the same file, whereas subclasses can be in another file, maybe in another package.
+-> You cannot get an instance of an inner class without an instance of the class that contains it.
+-> Inner classes have the methods they want, whereas subclasses have the methods of their parent class. Subclasses can of course define additional methods, but they'll always have those of their parent.
+
+About the situation:
+-> Inner classes are used when your big class needs a (usually short) class, related to its internal operation, and when nobody else needs it. A good example Nik G quoted is the LinkedList: it needs a Node class to work, that is short, and that no other class needs. Therefore Node is an inner class of LinkedList.
+-> Subclasses are used when you defines a "is-a" reliationship. Picture this: you want to make different types of cars. They have common properties and features: they all can move, they all have passengers, etc. So you create an abstract class "Car" with these common things. And you create a subclass for every different type of car.
+
+Q2. In Java classes, what are various access for specifiers
+Ans: In Java, methods and data members of a class/interface can have one of the following four access specifiers. The access specifiers are listed according to their restrictiveness order.
+1) private (accessible within the class where defined)
+2) default or package private (when no access specifier is specified)
+3) protected
+4) public (accessible from any class)
+
+But, the classes and interfaces themselves can have only two access specifiers when declared outside any other class.
+1) public
+2) default (when no access specifier is specified)
+We cannot declare class/interface with private or protected access specifiers.
+
+Q3. Give the purpose of static variables and static methods.
+Ans: Static methods are associated with the class, not objects of the class. Static methods cannot access or change the values of instance variables, but they can access or change the values of static variables.
+
+Static variables:
+If you declare any variable as static, it is known static variable.
+
+-> The static variable can be used to refer the common property of all objects (that is not unique for each object) e.g. company name of employees,college name of students etc.
+-> The static variable gets memory only once in class area at the time of class loading.
+
+Static methods:
+If you apply static keyword with any method, it is known as static method.
+
+-> A static method belongs to the class rather than object of a class.
+-> A static method can be invoked without the need for creating an instance of a class.
+-> Static method can access static data member and can change the value of it.
+
+Q4. Define data encapsulation and tell about its significance
+Ans: Data encapsulation, also known as data hiding, is the mechanism whereby the implementation details of a class are kept hidden from the user. The user can only perform a restricted set of operations on the hidden members of the class by executing special functions commonly called methods.
+The whole idea behind the data encapsulation is to hide the implementation details from users. ... This way only the data can accessed by public methods, by making the private fields and their implementation hidden for outside classes. That's why data encapsulation is known as data hiding.
+
+Q5. For Java programming questions, what is the meaning of loops and give its 3 types
+Ans: Loops are used to execute a set of statements repeatedly until a particular condition is satisfied. In Java we have three types of basic loops: for, while and do-while.
+
+Q6. What is the meaning of an infinite loop? How it is being declared?
+Ans: An infinite loop (sometimes called an endless loop ) is a piece of coding that lacks a functional exit so that it repeats indefinitely. In computer programming, a loop is a sequence of instruction s that is continually repeated until a certain condition is reached.
+An infinite loop in a programming language is simply a loop definition with no terminating condition.
+
+FOR LOOP
+for(i=0;;i++){
+//statement}
+Because the for loop here has got no termination condition, it will go on.
+
+WHILE LOOP
+while(1){
+//statement}
+Because the condition will always be 1, sit back and enjoy the dance of infinite loop.
+
+Q7. The difference between the break statement and continue statement?
+Ans: Break statement resumes the control of the program to the end of loop and made executional flow outside that loop. Continue statement resumes the control of the program to the next iteration of that loop enclosing 'continue' and made executional flow inside the loop again.
+
+Q8. The difference between float variables and double variables in Java
+Ans: Though both float and double datatype are used to represent floating-point numbers in Java, a double data type is more precise than float. A double variable can provide precision up to 15 to 16 decimal points as compared to float precision of 6 to 7 decimal digits.
+
+Q9. Meaning of Java final keyword and give example
+Ans: In the Java programming language, the final keyword is used in several contexts to define an entity that can only be assigned once. Once a final variable has been assigned, it always contains the same value.
+// a final variable
+final int THRESHOLD = 5;
+// a blank final variable
+final int THRESHOLD;
+// a final static variable PI
+static final double PI = 3.141592653589793;
+// a  blank final static  variable
+static final double PI;
+
+Q10. What is the meaning of ternary operator and provide an example
+Ans: The ternary operator is also known as the conditional operator. This operator consists of three operands and is used to evaluate Boolean expressions. The goal of the operator is to decide, which value should be assigned to the variable. The operator is written as −
+variable x = (expression) ? value if true: value if false
+public class Test {
+   public static void main(String args[]) {
+      int a, b;
+      a = 10;
+      b = (a == 1) ? 20: 30;
+      System.out.println( "Value of b is : " +  b );
+      b = (a == 10) ? 20: 30;
+      System.out.println( "Value of b is : " + b );
+   }
+}
+
+Q11. Give the different types of Java operators.
+Ans: Java provides a rich set of operators to manipulate variables. We can divide all the Java operators into the following groups −
+
+Arithmetic Operators
+Relational Operators
+Bitwise Operators
+Logical Operators
+Assignment Operators
+Misc Operators
+
+Q12. What is the meaning of default switch case and give an example of it
+Ans: The switch-case statement allows conditional execution of statements. ... If no matching case clause is found, the statement associated with the default clause is executed. A switch statement may contain any number of case clauses but only one default clause.
+
+var Core::KeyCode keyCode     = ...; // The code of a pressed key
+var Core::Direction direction = Core::Direction.None;
+
+// Depending on the pressed key, determine the direction to navigate in
+// the GUI application
+switch ( keyCode )
+{
+  case Core::KeyCode.Left  : direction = Core::Direction.Left;
+  case Core::KeyCode.Right : direction = Core::Direction.Right;
+  case Core::KeyCode.Up    : direction = Core::Direction.Top;
+  case Core::KeyCode.Down  : direction = Core::Direction.Bottom;
+  default :;
+}
+
+Q13. Give the base class in Java and where it is derived
+Ans: In the Java language, classes can be derived from other classes, thereby inheriting fields and methods from those classes. ... The class from which the subclass is derived is called a superclass (also a base class or a parent class).
+
+Q14. Can the main method in Java be applied in any data?
+Ans: No, The main() method also accepts some data from the user. It accepts a group of strings, which is called a string array. It is used to hold the command line arguments in the form of string values.
+
+main(String args[])  
+Here, agrs[] is the array name, and it is of String type. It means that it can store a group of string. Remember, this array can also store a group of numbers but in the form of string only. Values passed to the main() method is called arguments. These arguments are stored into args[] array, so the name args[] is generally used for it.
+
+Q15. Give Java packages and its significance
+Ans: Packages are used in Java in order to prevent naming conflicts, to control access, to make searching/locating and usage of classes, interfaces, enumerations and annotations easier, etc.
+A Package can be defined as a grouping of related types (classes, interfaces, enumerations and annotations ) providing access protection and namespace management.
+
+Some of the existing packages in Java are −
+1) java.lang: Contains language support classes(e.g classed which defines primitive data types, math operations). This package is automatically imported.
+2)  java.io: Contains classed for supporting input / output operations.
+3)  java.util: Contains utility classes which implement data structures like Linked List, Dictionary and support ; for Date / Time operations.
+4)  java.applet: Contains classes for creating Applets.
+5)  java.awt: Contain classes for implementing the components for graphical user interfaces (like button , ;menus etc).
+6)  java.net: Contain classes for supporting networking operations.
+
+Q16. Can you declare that a class is abstract without using an abstract method?
+Ans: Yes we can have an abstract class without Abstract Methods as both are independent concepts. Declaring a class abstract means that it can not be instantiated on its own and can only be sub classed. Declaring a method abstract means that Method will be defined in the subclass.
+
+Q17. Difference between interface and abstract class in Java
+Ans: 1. Type of methods: Interface can have only abstract methods. Abstract class can have abstract and non-abstract methods. From Java 8, it can have default and static methods also.
+2. Final Variables: Variables declared in a Java interface are by default final. An abstract class may contain non-final variables.
+3. Type of variables: Abstract class can have final, non-final, static and non-static variables. Interface has only static and final variables.
+4. Implementation: Abstract class can provide the implementation of interface. Interface can’t provide the implementation of abstract class.
+5. Inheritance vs Abstraction: A Java interface can be implemented using keyword “implements” and abstract class can be extended using keyword “extends”.
+6. Multiple implementation: An interface can extend another Java interface only, an abstract class can extend another Java class and implement multiple Java interfaces.
+7. Accessibility of Data Members: Members of a Java interface are public by default. A Java abstract class can have class members like private, protected, etc.
+
+Q18. In importing packing imports in Java, are the sub-packages also imported?
+Ans: Adding a class to a Package : We can add more classes to a created package by using package name at the top of the program and saving it in the package directory. We need a new java file to define a public class, otherwise we can add the new class to an existing .java file and recompile it.
+
+Subpackages: Packages that are inside another package are the subpackages. These are not imported by default, they have to imported explicitly. Also, members of a subpackage have no access privileges, i.e., they are considered as different package for protected and default access specifiers.
+Example :
+import java.util.*;
+util is a subpackage created inside java package.
+
+Q19. Can you declare that the main method in Java of the class as a private?
+Ans: Yes, we can declare the main method as private in Java. It compiles successfully without any errors but at the runtime, it says that the main method is not public.
+
+Q20. How can you able to pass the argument to function through reference instead of using pass by value
+Ans: In pass by reference (also called pass by address), a copy of the address of the actual parameter is stored. Use pass by reference when you are changing the parameter passed in by the client program. Consider a swapping function to demonstrate pass by value vs. pass by reference.
+
+Q21. When constructor of a class is invoked? Give an example.
+Ans: The constructors can be called explicitly or implicitly. The method of calling the constructor implicitly is also called the shorthand method. If we want to initialize fields of the class with your own values, then use a parameterized constructor. Example e = Example(0, 50); // Explicit call.
+
+Q22. Can you override the static methods of a class?
+Ans: Static methods cannot be overridden because they are not dispatched on the object instance at runtime. The compiler decides which method gets called. Static methods can be overloaded (meaning that you can have the same method name for several methods as long as they have different parameter types).
+
+Q23. In Java, does a string is considered as a data type?
+Ans: A String in Java is actually a non-primitive data type, because it refers to an object. The String object has methods that are used to perform certain operations on strings.
+
+Q24. Why strings are called immutable in Java?
+Ans: The string is Immutable in Java because String objects are cached in String pool. Since Strings are very popular as HashMap key, it's important for them to be immutable so that they can retrieve the value object which was stored in HashMap. 
+
+Q25. When there are many changes that are required in the data, which one should you use? StringBuffer or String
+Ans: string Buffer 
+The String type is a class in Java, it is used to represent a set of characters. Strings in Java are immutable, you cannot change the value of a String once created.
+Since a String is immutable, if you try to reassign the value of a String. The reference of it will be pointed to the new String object leaving an unused String in the memory.
+
+Java provides StringBuffer class as a replacement of Strings in places where there is a necessity to make a lot of modifications to Strings of characters.
+You can modify/manipulate the contents of a StringBuffer over and over again without leaving behind a lot of new unused objects.
+
+The StringBuilder class was introduced as of Java 5 and the main difference between the StringBuffer and StringBuilder is that StringBuilder’s methods are not thread safe (not synchronized).
+
+It is recommended to use StringBuilder whenever possible because it is faster than StringBuffer. However, if the thread safety is necessary, the best option is StringBuffer objects.
+
+Q26. How can you make a copy of Java object?
+Ans: Object cloning in Java is the process of creating an exact copy of the original object. In other words, it is a way of creating a new object by copying all the data and attributes from the original object. This is only possible by implementing clone() method of the java. lang.
+
+Q27. What is the benefit of using inheritance?
+Ans: The main advantages of inheritance are code reusability and readability. When child class inherits the properties and functionality of parent class, we need not to write the same code again in child class. This makes it easier to reuse the code, makes us write the less code and the code becomes much more readable.
+
+Q28. What is the access scope of the protected access specifier?
+Ans: When a variable, method or constructor that are declared protected in a superclass can be accessed only by the subclasses in other package or any class within the package of the protected members' class.
+
+Q29. How can you use the data type as primitive as objects?
+Ans: In the OOPs concepts guide, we learned that object oriented programming is all about objects. The eight primitive data types byte, short, int, long, float, double, char and boolean are not objects, Wrapper classes are used for converting primitive data types into objects, like int to Integer etc.
+
+Q30. Can you call the non-static method from a static method inside?
+Ans: The only way to call a non-static method from a static method is to have an instance of the class containing the non-static method. By definition, a non-static method is one that is called ON an instance of some class, whereas a static method belongs to the class itself.
+
+Q31. How the objects are being stored in Java?
+Ans: All objects in Java are stored on the heap. The "variables" that hold references to them can be on the stack or they can be contained in other objects (then they are not really variables, but fields), which puts them on the heap also. The Class objects that define Classes are also heap objects.
+
+Q32. Can you use different return types of methods when it is overridden?
+Ans: Java supports* covariant return types for overridden methods. This means an overridden method may have a more specific return type. That is, as long as the new return type is assignable to the return type of the method you are overriding, it's allowed.
+Java 5.0 onwards it is possible to have different return type for a overriding method in child class, but child's return type should be sub-type of parent's return type.
+
+Q33. What will be the order of the call of constructors in the inheritance?
+Ans: Order of execution of constructors in inheritance relationship is from base /parent class to derived / child class. We know that when we create an object of a class then the constructors get called automatically.
+
+Q34. Can you compare StringBuffer and string in Java?
+Ans: Java provides the StringBuffer and String classes, and the String class is used to manipulate character strings that cannot be changed. Simply stated, objects of type String are read only and immutable. The StringBuffer class is used to represent characters that can be modified.
+
+Q35. Can you increase the size of an array after it is being declared?
+Ans: You can't modify the size of a primitive array since it becomes constant allotted memory. What you're doing is just creating a new array, copying the previous array's elements and then passing the reference. If you can't use ArrayLists or more advanced Collections then you can't change it.
